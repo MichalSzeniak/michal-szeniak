@@ -2,7 +2,12 @@ import { config, collection, fields, singleton } from "@keystatic/core";
 
 export default config({
   storage: {
-    kind: "local",
+    kind: "github",
+    pathPrefix: "prod",
+    repo: {
+      owner: "michalszeniak",
+      name: "michal-szeniak",
+    },
   },
   ui: {
     brand: {
