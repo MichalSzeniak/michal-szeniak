@@ -1,9 +1,11 @@
-import Link from 'next/link';
-import { reader } from './reader';
-import './styles.css';
+import Link from "next/link";
+import { reader } from "./reader";
+import "./styles.css";
 
 export default async function Homepage() {
   const posts = await reader.collections.posts.all();
+
+  console.log("object");
 
   return (
     <div>
@@ -15,7 +17,7 @@ export default async function Homepage() {
       </p>
       <h2>Posts</h2>
       <ul>
-        {posts.map(post => (
+        {posts.map((post) => (
           <li key={post.slug}>
             <Link href={`/${post.slug}`}>{post.entry.title}</Link>
           </li>

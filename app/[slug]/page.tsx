@@ -1,12 +1,15 @@
-import { DocumentRenderer } from '@keystatic/core/renderer';
-import { reader } from '../reader';
+import { DocumentRenderer } from "@keystatic/core/renderer";
+import { reader } from "../reader";
+import { notFound } from "next/navigation";
 
 export default async function Post({ params }: { params: { slug: string } }) {
   const { slug } = params;
 
+  console.log("firdssasast");
+
   const post = await reader.collections.posts.read(slug);
 
-  if (!post) return <div>Post not found!</div>;
+  if (!post) return notFound();
 
   return (
     <div>
@@ -21,7 +24,7 @@ export default async function Post({ params }: { params: { slug: string } }) {
 export async function generateStaticParams() {
   const slugs = await reader.collections.posts.list();
 
-  return slugs.map(slug => ({
+  return slugs.map((slug) => ({
     slug,
   }));
 }
