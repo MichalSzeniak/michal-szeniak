@@ -1,6 +1,14 @@
 import Link from "next/link";
 import { reader } from "./reader";
 import "./index.css";
+import { Inter as FontSans } from "next/font/google";
+import { cn } from "../lib/utils";
+import Navigation from "../components/Navigation";
+
+const fontSans = FontSans({
+  subsets: ["latin"],
+  variable: "--font-sans",
+});
 
 export default async function RootLayout({
   children,
@@ -11,14 +19,19 @@ export default async function RootLayout({
 
   return (
     <html lang="pl">
-      <body suppressHydrationWarning>
-        <header>
-          <nav>
-            <Link href={"/"}>Home</Link>
-          </nav>
-        </header>
+      <body
+        suppressHydrationWarning
+        className={cn(
+          "min-h-screen bg-background font-sans antialiased container",
+          fontSans.variable
+        )}
+      >
+        <Navigation />
+
         {children}
+
         <hr />
+
         <footer>
           <h2>Znajdziesz mnie na:</h2>
           <ul>
