@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { reader } from "./reader";
+import "./index.css";
 
 export default async function RootLayout({
   children,
