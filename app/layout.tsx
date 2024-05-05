@@ -22,7 +22,7 @@ export default async function RootLayout({
       <body
         suppressHydrationWarning
         className={cn(
-          "min-h-screen bg-background font-sans antialiased container",
+          "min-h-screen bg-background font-sans antialiased",
           fontSans.variable
         )}
       >
@@ -41,6 +41,7 @@ export default async function RootLayout({
                   href={`https://github.com/${socialLinks?.github}`}
                   rel="noopener"
                   target="_blank"
+                  className="font-nunito"
                 >
                   Github
                 </a>
