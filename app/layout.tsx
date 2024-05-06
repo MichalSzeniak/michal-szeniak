@@ -26,7 +26,7 @@ export default async function RootLayout({
           fontSans.variable
         )}
       >
-        <Navigation />
+        {/* <Navigation /> */}
 
         {children}
 
