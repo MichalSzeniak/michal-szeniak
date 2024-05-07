@@ -4,6 +4,7 @@ import "./index.css";
 import { Inter as FontSans } from "next/font/google";
 import { cn } from "../lib/utils";
 import Navigation from "../components/Navigation";
+import Footer from "@/components/Footer";
 
 const fontSans = FontSans({
   subsets: ["latin"],
@@ -15,52 +16,18 @@ export default async function RootLayout({
 }: {
   children: React.ReactNode;
 }) {
-  const socialLinks = await reader.singletons.socialLinks.read();
-
   return (
     <html lang="pl">
       <body
         suppressHydrationWarning
         className={cn(
-          "min-h-screen bg-background font-sans antialiased",
+          "min-h-screen bg-background font-sans antialiased ",
           fontSans.variable
         )}
       >
-        {/* <Navigation /> */}
-
-        {children}
-
-        <hr />
-
-        <footer>
-          <h2>Znajdziesz mnie na:</h2>
-          <ul>
-            {socialLinks?.github && (
-              <li>
-                <a
-                  href={`https://github.com/${socialLinks?.github}`}
-                  rel="noopener"
-                  target="_blank"
-                  className="font-nunito"
-                >
-                  Github
-                </a>
-              </li>
-            )}
-
-            {socialLinks?.linkedin && (
-              <li>
-                <a
-                  href={`https://github.com/${socialLinks?.linkedin}`}
-                  rel="noopener"
-                  target="_blank"
-                >
-                  Linkedin
-                </a>
-              </li>
-            )}
-          </ul>
-        </footer>
+        <Navigation />
+        <main>{children}</main>
+        <Footer />
       </body>
     </html>
   );
