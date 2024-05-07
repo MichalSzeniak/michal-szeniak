@@ -1,5 +1,5 @@
 import { DocumentRenderer } from "@keystatic/core/renderer";
-import { reader } from "../reader";
+import { reader } from "../../reader";
 import { notFound } from "next/navigation";
 
 export default async function Post({ params }: { params: { slug: string } }) {

@@ -5,7 +5,7 @@ const Footer = async () => {
 
   return (
     <footer>
-      <h2>Znajdziesz mnie na:</h2>
+      <h2>You can find me on:</h2>
       <ul>
         {socialLinks?.github && (
           <li>
