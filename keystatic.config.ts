@@ -1,25 +1,24 @@
-import {
-  config,
-  collection,
-  fields,
-  singleton,
-  LocalConfig,
-  GitHubConfig,
-} from "@keystatic/core";
+import { config, collection, fields, singleton } from "@keystatic/core";
 
-const storage: LocalConfig["storage"] | GitHubConfig["storage"] =
-  process.env.NODE_ENV === "development"
-    ? { kind: "local" }
-    : {
-        kind: "github",
-        repo: {
-          owner: process.env.NEXT_PUBLIC_VERCEL_GIT_REPO_OWNER!,
-          name: process.env.NEXT_PUBLIC_VERCEL_GIT_REPO_SLUG!,
-        },
-      };
+// const storage: LocalConfig["storage"] | GitHubConfig["storage"] =
+//   process.env.NODE_ENV === "development"
+//     ? { kind: "local" }
+//     : {
+//         kind: "github",
+//         repo: {
+//           owner: process.env.NEXT_PUBLIC_VERCEL_GIT_REPO_OWNER!,
+//           name: process.env.NEXT_PUBLIC_VERCEL_GIT_REPO_SLUG!,
+//         },
+//       };
 
 export default config({
-  storage,
+  storage: {
+    kind: "github",
+    repo: {
+      owner: "MichalSzeniak",
+      name: "michal-szeniak",
+    },
+  },
   ui: {
     brand: {
       name: "Blog",
