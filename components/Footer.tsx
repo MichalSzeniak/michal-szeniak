@@ -29,7 +29,7 @@ const Footer = async () => {
             <li>
               <Button variant="outline" size="icon">
                 <a
-                  href={`https://github.com/${socialLinks?.linkedin}`}
+                  href={`https://www.linkedin.com/in/${socialLinks?.linkedin}`}
                   rel="noopener"
                   target="_blank"
                 >
