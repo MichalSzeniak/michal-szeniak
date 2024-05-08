@@ -1,9 +1,11 @@
 import { DocumentRenderer } from "@keystatic/core/renderer";
-import { reader } from "../../reader";
+import { reader } from "app/reader";
 import { notFound } from "next/navigation";
 
 export default async function Post({ params }: { params: { slug: string } }) {
   const { slug } = params;
+
+  console.log("firdssasast");
 
   const post = await reader.collections.posts.read(slug);
 

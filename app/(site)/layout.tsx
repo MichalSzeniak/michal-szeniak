@@ -1,4 +1,3 @@
-import Link from "next/link";
 import "./index.css";
 import { Inter as FontSans } from "next/font/google";
 import Footer from "@/components/Footer";
