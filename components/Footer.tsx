@@ -8,7 +8,7 @@ const Footer = async () => {
   return (
     <footer className="w-full mx-auto max-w-screen-xl">
       <hr />
-      <div className="flex items-center justify-between">
+      <div className="flex items-center justify-between px-6">
         <ul className="flex justify-center gap-5 my-6">
           {socialLinks?.github && (
             <li>
