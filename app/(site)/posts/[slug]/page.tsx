@@ -11,7 +11,7 @@ export default async function Post({ params }: { params: { slug: string } }) {
   if (!post) return notFound();
 
   return (
-    <section className="w-full mx-auto max-w-screen-xl min-h-screen px-20 flex flex-col gap-10">
+    <section className="w-full mx-auto max-w-screen-xl min-h-screen px-5 sm:px-20 flex flex-col gap-10">
       <h1 className="mt-16 text-4xl font-black tracking-tight sm:text-5xl xl:text-6xl font-nunito">
         {post.title}
       </h1>

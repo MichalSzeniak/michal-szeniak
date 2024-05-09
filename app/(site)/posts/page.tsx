@@ -8,7 +8,7 @@ export default async function Homepage() {
   console.log(posts);
 
   return (
-    <section className="w-full mx-auto max-w-screen-xl min-h-screen px-20">
+    <section className="w-full mx-auto max-w-screen-xl min-h-screen px-5 sm:px-20">
       <ul className="grid grid-cols-1 gap-4 md:gap-x-6 gap-y-20 sm:gap-y-16 md:grid-cols-2 xl:grid-cols-3 pl-0 mt-16 ">
         {posts.map((post) => (
           <Link href={`posts/${post.slug}`}>
