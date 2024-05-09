@@ -1,5 +1,5 @@
 import { reader } from "app/reader";
-import { GitGraphIcon, Github, Linkedin } from "lucide-react";
+import { Github, Linkedin } from "lucide-react";
 import { Button } from "./ui/button";
 
 const Footer = async () => {

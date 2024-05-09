@@ -4,6 +4,7 @@ import Link from "next/link";
 import { ModeToggle } from "./ModeToggle";
 import { Button } from "./ui/button";
 import { usePathname } from "next/navigation";
+import HamburgerMenu from "./HamburgerMenu";
 
 const Navigation = () => {
   const pathname = usePathname();
@@ -16,7 +17,8 @@ const Navigation = () => {
             <span className="text-foreground">S</span>
           </Link>
         </p>
-        <div className="flex gap-2 sm:gap-10">
+        <HamburgerMenu />
+        <div className=" gap-2 sm:gap-10 hidden sm:flex">
           <ul className="flex gap-4 mb-0">
             <li>
               <Button
