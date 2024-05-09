@@ -40,6 +40,11 @@ export default config({
       format: { contentField: "content" },
       schema: {
         title: fields.slug({ name: { label: "Title" } }),
+        image: fields.image({
+          label: "postImage",
+          directory: "public/images/postImages",
+          publicPath: "/images/postImages",
+        }),
         content: fields.document({
           label: "Content",
           formatting: true,
