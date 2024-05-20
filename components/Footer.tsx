@@ -6,7 +6,7 @@ const Footer = async () => {
   const socialLinks = await reader.singletons.socialLinks.read();
 
   return (
-    <footer className="w-full mx-auto max-w-screen-xl">
+    <footer className="w-full mx-auto max-w-screen-xl bg-background">
       <hr />
       <div className="flex items-center justify-between px-6 flex-col sm:flex-row">
         <ul className="flex justify-center gap-5 my-6">

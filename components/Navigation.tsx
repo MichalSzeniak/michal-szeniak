@@ -9,7 +9,7 @@ import HamburgerMenu from "./HamburgerMenu";
 const Navigation = () => {
   const pathname = usePathname();
   return (
-    <nav className="relative top-0 z-50 w-full py-3 shadow-xl dark:shadow-gray-200/5 shadow-gray-200/20 print:hidden sm:py-4 md:text-sm lg:text-base">
+    <nav className="fixed top-0 z-100 bg-background w-full py-3 shadow-xl dark:shadow-gray-200/5 shadow-gray-200/20 print:hidden sm:py-4 md:text-sm lg:text-base">
       <div className="mx-auto flex max-w-screen-xl items-center justify-between gap-2 px-5 sm:gap-0">
         <p className="text-2xl font-black tracking-tight xl:text-4xl font-nunito mb-0">
           <Link href={"/"}>
@@ -25,7 +25,7 @@ const Navigation = () => {
                 variant="ghost"
                 asChild
                 className={`font-nunito link text-base ${
-                  pathname === "/" ? "text-primary font-bold" : ""
+                  pathname === "/" ? "text-primary font-bold bg-secondary" : ""
                 }`}
               >
                 <Link href={"/"}>Home</Link>
@@ -36,7 +36,9 @@ const Navigation = () => {
                 variant="ghost"
                 asChild
                 className={`font-nunito link text-base ${
-                  pathname === "/posts" ? "text-primary font-bold" : ""
+                  pathname === "/posts"
+                    ? "text-primary font-bold bg-secondary"
+                    : ""
                 }`}
               >
                 <Link href={"/posts"}>Posts</Link>
@@ -47,7 +49,9 @@ const Navigation = () => {
                 variant="ghost"
                 asChild
                 className={`font-nunito link text-base ${
-                  pathname === "/links" ? "text-primary font-bold" : ""
+                  pathname === "/links"
+                    ? "text-primary font-bold bg-secondary"
+                    : ""
                 }`}
               >
                 <Link href={"/links"}>Links</Link>
@@ -58,13 +62,16 @@ const Navigation = () => {
                 variant="ghost"
                 asChild
                 className={`font-nunito link text-base ${
-                  pathname === "/contact" ? "text-primary font-bold" : ""
+                  pathname === "/contact"
+                    ? "text-primary font-bold bg-secondary"
+                    : ""
                 }`}
               >
                 <Link href={"/contact"}>Contact</Link>
               </Button>
             </li>
           </ul>
+
           <ModeToggle />
         </div>
       </div>

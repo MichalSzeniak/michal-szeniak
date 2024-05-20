@@ -1,11 +1,8 @@
 import { reader } from "app/reader";
-import Image from "next/image";
 import Link from "next/link";
 
 export default async function Homepage() {
   const posts = await reader.collections.posts.all();
-
-  console.log(posts);
 
   return (
     <section className="w-full mx-auto max-w-screen-xl min-h-screen px-5 sm:px-20">
