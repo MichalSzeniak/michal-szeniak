@@ -12,11 +12,11 @@ const Navigation = () => {
         <ul className="flex justify-center gap-5">
           <motion.p
             className="mb-0 font-poppins text-2xl font-black tracking-tight xl:text-4xl"
-            initial={{ opacity: 0, y: -20 }}
+            initial={{ opacity: 0, y: -50 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{
               y: {
-                duration: 0.5,
+                duration: 0.25,
               },
             }}
           >
@@ -27,12 +27,12 @@ const Navigation = () => {
           </motion.p>
 
           <motion.li
-            initial={{ opacity: 0, y: -20 }}
+            initial={{ opacity: 0, y: -50 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{
               delay: 0.25,
               y: {
-                duration: 0.5,
+                duration: 0.25,
               },
             }}
           >
@@ -49,12 +49,12 @@ const Navigation = () => {
           </motion.li>
 
           <motion.li
-            initial={{ opacity: 0, y: -20 }}
+            initial={{ opacity: 0, y: -50 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{
               delay: 0.5,
               y: {
-                duration: 0.75,
+                duration: 0.25,
               },
             }}
           >

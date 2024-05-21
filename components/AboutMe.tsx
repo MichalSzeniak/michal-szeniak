@@ -2,18 +2,18 @@ import Reveral from "./Reveral";
 
 const AboutMe = () => {
   return (
-    <section className="h-screen w-full px-8 pb-16 pt-28 sm:pb-28 sm:pt-28">
-      <div className="mx-auto flex h-full w-full max-w-screen-lg flex-col">
+    <section className="min-h-screen w-full bg-blue-600 px-8 py-10 sm:py-0">
+      <div className="mx-auto flex min-h-screen w-full max-w-screen-lg flex-col justify-center">
         <Reveral>
-          <h1 className="font-heading mx-auto text-center font-poppins text-4xl font-black tracking-tight sm:text-5xl md:ml-0 md:text-left xl:text-7xl">
+          <h2 className="font-heading mx-auto text-center font-poppins text-4xl font-black tracking-tight sm:text-5xl md:ml-0 md:text-left xl:text-7xl">
             About
-            <span className="text-blue-500">.</span>
-          </h1>
+            <span className="text-black">.</span>
+          </h2>
         </Reveral>
 
-        <div className="xl:lg mt-10 flex flex-col gap-5 text-xl">
+        <div className="xl:lg mt-10 flex flex-col gap-5 text-pretty text-xl">
           <Reveral>
-            <span>
+            <span className="text-pretty">
               As a passionate Front-End Developer with over two years of
               experience, I have honed my craft in building a diverse array of
               projects. My expertise lies in React technology, where I excel in
