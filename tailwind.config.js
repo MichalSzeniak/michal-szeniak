@@ -22,6 +22,7 @@ module.exports = {
       fontFamily: {
         sans: ["var(--font-sans)", ...fontFamily.sans],
         nunito: ["nunito", "sans-serif"],
+        poppins: ["poppins", "sans-serif"],
       },
       colors: {
         border: "hsl(var(--border))",

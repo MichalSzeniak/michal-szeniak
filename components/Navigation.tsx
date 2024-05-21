@@ -1,31 +1,84 @@
 "use client";
-
+import { motion } from "framer-motion";
 import Link from "next/link";
-import { ModeToggle } from "./ModeToggle";
 import { Button } from "./ui/button";
-import { usePathname } from "next/navigation";
-import HamburgerMenu from "./HamburgerMenu";
+import { Github, Linkedin } from "lucide-react";
+import Menu from "./Menu";
 
 const Navigation = () => {
-  const pathname = usePathname();
   return (
-    <nav className="fixed top-0 z-100 bg-background w-full py-3 shadow-xl dark:shadow-gray-200/5 shadow-gray-200/20 print:hidden sm:py-4 md:text-sm lg:text-base">
+    <nav className="fixed top-0 z-[10] w-full bg-neutral-950/30 py-3 backdrop-blur-lg sm:py-7 md:text-sm lg:text-base print:hidden">
       <div className="mx-auto flex max-w-screen-xl items-center justify-between gap-2 px-5 sm:gap-0">
-        <p className="text-2xl font-black tracking-tight xl:text-4xl font-nunito mb-0">
-          <Link href={"/"}>
-            <span className="text-cyan-500">M</span>
-            <span className="text-foreground">S</span>
-          </Link>
-        </p>
-        <HamburgerMenu />
-        <div className=" gap-2 sm:gap-10 hidden sm:flex">
-          <ul className="flex gap-4 mb-0">
+        <ul className="flex justify-center gap-5">
+          <motion.p
+            className="mb-0 font-poppins text-2xl font-black tracking-tight xl:text-4xl"
+            initial={{ opacity: 0, y: -20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{
+              y: {
+                duration: 0.5,
+              },
+            }}
+          >
+            <Link href={"/"}>
+              <span className="text-blue-500">M</span>
+              <span className="text-foreground">S</span>
+            </Link>
+          </motion.p>
+
+          <motion.li
+            initial={{ opacity: 0, y: -20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{
+              delay: 0.25,
+              y: {
+                duration: 0.5,
+              },
+            }}
+          >
+            <Button variant="outline" size="icon">
+              <a
+                href={`https://github.com/MichalSzeniak`}
+                rel="noopener"
+                target="_blank"
+                className="font-nunito"
+              >
+                <Github />
+              </a>
+            </Button>
+          </motion.li>
+
+          <motion.li
+            initial={{ opacity: 0, y: -20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{
+              delay: 0.5,
+              y: {
+                duration: 0.75,
+              },
+            }}
+          >
+            <Button variant="outline" size="icon">
+              <a
+                href={`https://www.linkedin.com/in/michal-szeniak/`}
+                rel="noopener"
+                target="_blank"
+              >
+                <Linkedin />
+              </a>
+            </Button>
+          </motion.li>
+        </ul>
+
+        <Menu />
+        {/* <div className=" hidden gap-2 sm:flex sm:gap-10">
+          <ul className="mb-0 flex gap-4">
             <li>
               <Button
                 variant="ghost"
                 asChild
-                className={`font-nunito link text-base ${
-                  pathname === "/" ? "text-primary font-bold bg-secondary" : ""
+                className={`link font-nunito text-base ${
+                  pathname === "/" ? "bg-secondary font-bold text-primary" : ""
                 }`}
               >
                 <Link href={"/"}>Home</Link>
@@ -35,9 +88,9 @@ const Navigation = () => {
               <Button
                 variant="ghost"
                 asChild
-                className={`font-nunito link text-base ${
+                className={`link font-nunito text-base ${
                   pathname === "/posts"
-                    ? "text-primary font-bold bg-secondary"
+                    ? "bg-secondary font-bold text-primary"
                     : ""
                 }`}
               >
@@ -48,9 +101,9 @@ const Navigation = () => {
               <Button
                 variant="ghost"
                 asChild
-                className={`font-nunito link text-base ${
+                className={`link font-nunito text-base ${
                   pathname === "/links"
-                    ? "text-primary font-bold bg-secondary"
+                    ? "bg-secondary font-bold text-primary"
                     : ""
                 }`}
               >
@@ -61,9 +114,9 @@ const Navigation = () => {
               <Button
                 variant="ghost"
                 asChild
-                className={`font-nunito link text-base ${
+                className={`link font-nunito text-base ${
                   pathname === "/contact"
-                    ? "text-primary font-bold bg-secondary"
+                    ? "bg-secondary font-bold text-primary"
                     : ""
                 }`}
               >
@@ -73,7 +126,7 @@ const Navigation = () => {
           </ul>
 
           <ModeToggle />
-        </div>
+        </div> */}
       </div>
     </nav>
   );

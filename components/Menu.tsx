@@ -7,7 +7,6 @@ import {
   SheetHeader,
   SheetTrigger,
 } from "./ui/sheet";
-import { Menu } from "lucide-react";
 import { Button } from "./ui/button";
 import Link from "next/link";
 import { ModeToggle } from "./ModeToggle";
@@ -34,7 +33,7 @@ const data = [
   },
 ];
 
-const HamburgerMenu = () => {
+const Menu = () => {
   const pathname = usePathname();
   const [isOpen, toggleOpen] = useCycle(true, false);
 
@@ -92,4 +91,4 @@ const HamburgerMenu = () => {
     </Sheet>
   );
 };
-export default HamburgerMenu;
+export default Menu;
