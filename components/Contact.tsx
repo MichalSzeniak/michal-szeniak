@@ -27,7 +27,8 @@ const Contact = () => {
         <div className="mt-2 flex flex-col gap-5 text-center text-lg sm:text-xl">
           <Reveral>
             <span>
-              Got a question or proposal, or just want to say hello? Go ahead.
+              If you have any inquiries or suggestions, I’m all ears. Don’t
+              hesitate to get in touch.
             </span>
           </Reveral>
         </div>
