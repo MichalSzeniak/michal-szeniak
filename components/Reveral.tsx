@@ -4,7 +4,7 @@ import { motion, useAnimation, useInView } from "framer-motion";
 import { useEffect, useRef } from "react";
 
 interface Props {
-  children: JSX.Element;
+  children: React.ReactNode;
   width?: "fit-content" | "100%";
 }
 
@@ -59,7 +59,7 @@ const Reveral = ({ children, width = "fit-content" }: Props) => {
           duration: 0.5,
           ease: "easeIn",
         }}
-        className="absolute top-1 bottom-1 left-0 right-0 bg-blue-500 z-10"
+        className="absolute bottom-1 left-0 right-0 top-1 z-10 bg-blue-500"
       />
     </div>
   );
