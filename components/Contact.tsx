@@ -7,8 +7,8 @@ import { Button } from "./ui/button";
 
 const Contact = () => {
   return (
-    <section className="h-screen w-full px-8">
-      <div className="mx-auto flex min-h-screen w-full max-w-screen-lg flex-col items-center justify-center">
+    <section className="my-24 w-full px-8 sm:my-52">
+      <div className="mx-auto flex w-full max-w-screen-lg flex-col items-center justify-center">
         <div className="flex justify-center">
           <Reveral>
             <h2 className="font-poppins text-4xl font-black tracking-tight sm:text-5xl xl:text-8xl">
@@ -43,51 +43,6 @@ const Contact = () => {
             </a>
           </Reveral>
         </div>
-
-        <ul className="mt-10 flex justify-center gap-5">
-          <motion.li
-            initial={{ opacity: 0, y: -50 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{
-              delay: 0.25,
-              y: {
-                duration: 0.25,
-              },
-            }}
-          >
-            <Button variant="outline" size="icon">
-              <a
-                href={`https://github.com/MichalSzeniak`}
-                rel="noopener"
-                target="_blank"
-                className="font-nunito"
-              >
-                <Github />
-              </a>
-            </Button>
-          </motion.li>
-
-          <motion.li
-            initial={{ opacity: 0, y: -50 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{
-              delay: 0.5,
-              y: {
-                duration: 0.25,
-              },
-            }}
-          >
-            <Button variant="outline" size="icon">
-              <a
-                href={`https://www.linkedin.com/in/michal-szeniak/`}
-                rel="noopener"
-                target="_blank"
-              >
-                <Linkedin />
-              </a>
-            </Button>
-          </motion.li>
-        </ul>
       </div>
     </section>
   );
