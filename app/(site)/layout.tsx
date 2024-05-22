@@ -20,16 +20,16 @@ export default async function RootLayout({
       <body
         suppressHydrationWarning
         className={cn(
-          "min-h-screen font-sans antialiased bg-background",
-          fontSans.variable
+          "min-h-screen bg-background font-sans antialiased",
+          fontSans.variable,
         )}
       >
         <ThemeProvider
           attribute="class"
-          defaultTheme="system"
+          defaultTheme="dark"
           enableSystem
           disableTransitionOnChange
-          themes={["light", "dark"]}
+          // themes={["light", "dark"]}
         >
           <Navigation />
           <main>{children}</main>

@@ -2,7 +2,7 @@ import Reveral from "./Reveral";
 
 const AboutMe = () => {
   return (
-    <section className="min-h-screen w-full bg-blue-600 px-8 py-10 sm:py-0">
+    <section className="min-h-screen w-full bg-gradient-to-l from-cyan-600 to-blue-600 px-8 py-10 sm:py-0">
       <div className="mx-auto flex min-h-screen w-full max-w-screen-lg flex-col justify-center">
         <Reveral>
           <h2 className="font-heading mx-auto text-center font-poppins text-4xl font-black tracking-tight sm:text-5xl md:ml-0 md:text-left xl:text-7xl">

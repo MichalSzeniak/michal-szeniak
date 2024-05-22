@@ -1,18 +1,17 @@
-import { motion, useCycle } from "framer-motion";
-
-import {
-  Sheet,
-  SheetClose,
-  SheetContent,
-  SheetHeader,
-  SheetTrigger,
-} from "./ui/sheet";
+import { motion } from "framer-motion";
 import { Button } from "./ui/button";
 import Link from "next/link";
-import { ModeToggle } from "./ModeToggle";
 import { usePathname } from "next/navigation";
-import { MenuToggle } from "./MenuToggle";
-// import Footer from "@/components/Footer";
+import { useState } from "react";
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuSeparator,
+  DropdownMenuTrigger,
+} from "./ui/dropdown-menu";
+import { Mail, MenuIcon, Navigation, X } from "lucide-react";
+import { ModeToggle } from "./ModeToggle";
 
 const data = [
   {
@@ -20,75 +19,95 @@ const data = [
     name: "Home",
   },
   {
-    href: "/posts",
-    name: "Posts",
+    href: "/articles",
+    name: "My articles",
   },
   {
-    href: "/links",
-    name: "Links",
+    href: "/projects",
+    name: "My projects",
   },
   {
-    href: "/contact",
-    name: "Contact",
+    href: "/resume",
+    name: "My resume",
   },
 ];
 
 const Menu = () => {
   const pathname = usePathname();
-  const [isOpen, toggleOpen] = useCycle(true, false);
+  const [isOpen, toggleOpen] = useState(false);
 
   return (
-    <Sheet modal={false}>
-      <SheetTrigger>
-        {/* <Button variant="outline" size="icon">
-          <Menu />
-        </Button> */}
-        <motion.div animate={isOpen ? "open" : "closed"}>
-          <MenuToggle
-            toggle={() => toggleOpen()}
-            className="z-100 absolute right-6 top-6 "
-          />
-        </motion.div>
-      </SheetTrigger>
-      <SheetContent side="right" className="w-[300px]">
-        <SheetHeader>
-          <ul className="mb-0 flex flex-col gap-5 pt-10 ">
-            {data.map((item) => (
-              <li>
-                <motion.div
-                  initial={{ opacity: 0, y: 50 }}
-                  // whileInView={{ opacity: 1, y: 0 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{
-                    delay: 2,
-                    opacity: {
-                      ease: "easeInOut",
-                      duration: 1,
-                    },
-                    y: {
-                      duration: 0.5,
-                    },
-                  }}
+    <nav>
+      <DropdownMenu modal={false} open={isOpen}>
+        <DropdownMenuTrigger asChild>
+          <Button
+            variant="icon"
+            size="icon"
+            onClick={() => toggleOpen((prev) => !prev)}
+          >
+            <MenuIcon className="h-10 w-10" />
+          </Button>
+        </DropdownMenuTrigger>
+        <DropdownMenuContent
+          align="end"
+          className="w-80 bg-blue-500 bg-foreground  p-10 sm:w-96"
+          sideOffset={-40}
+          onInteractOutside={() => toggleOpen((prev) => !prev)}
+        >
+          <Button
+            variant="icon"
+            size="icon"
+            className="absolute right-0 top-0 text-primary hover:text-blue-800"
+            onClick={() => toggleOpen((prev) => !prev)}
+          >
+            <X className="h-10 w-10" />
+          </Button>
+          {data.map((item) => (
+            <motion.div
+              className="flex"
+              animate={{ opacity: 1, scale: 1, filter: "blur(0px)" }}
+              initial={{ opacity: 0, scale: 0.3, filter: "blur(10px)" }}
+            >
+              <DropdownMenuItem onClick={() => toggleOpen((prev) => !prev)}>
+                <Button
+                  variant="link"
+                  asChild
+                  className={`link w-full font-poppins text-xl text-secondary ${
+                    pathname === item.href ? "font-bold text-primary" : ""
+                  }`}
                 >
-                  <SheetClose asChild>
-                    <Button
-                      variant="secondary"
-                      asChild
-                      className={`link w-full font-nunito text-xl ${
-                        pathname === item.href ? "font-bold text-primary" : ""
-                      }`}
-                    >
-                      <Link href={item.href}>{item.name}</Link>
-                    </Button>
-                  </SheetClose>
-                </motion.div>
-              </li>
-            ))}
-          </ul>
-          <ModeToggle />
-        </SheetHeader>
-      </SheetContent>
-    </Sheet>
+                  <Link href={item.href}>{item.name}</Link>
+                </Button>
+              </DropdownMenuItem>
+            </motion.div>
+          ))}
+
+          <DropdownMenuSeparator />
+          <motion.div
+            className="flex"
+            animate={{ opacity: 1, scale: 1, filter: "blur(0px)" }}
+            initial={{ opacity: 0, scale: 0.3, filter: "blur(10px)" }}
+          >
+            <DropdownMenuItem onClick={() => toggleOpen((prev) => !prev)}>
+              <Button
+                variant="link"
+                asChild
+                className={`link w-full font-poppins text-sm text-secondary `}
+              >
+                <a
+                  className="flex items-center gap-3 font-black transition-all hover:text-primary"
+                  href="mailto:michal.szeniak@gmail.com"
+                >
+                  <Mail /> michal.szeniak@gmail.com
+                </a>
+              </Button>
+            </DropdownMenuItem>
+          </motion.div>
+
+          {/* <ModeToggle /> */}
+        </DropdownMenuContent>
+      </DropdownMenu>
+    </nav>
   );
 };
 export default Menu;
