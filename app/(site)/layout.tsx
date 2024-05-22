@@ -29,7 +29,7 @@ export default async function RootLayout({
           defaultTheme="dark"
           enableSystem
           disableTransitionOnChange
-          // themes={["light", "dark"]}
+          themes={["dark"]}
         >
           <Navigation />
           <main>{children}</main>
