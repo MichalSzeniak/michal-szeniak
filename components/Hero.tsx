@@ -11,7 +11,7 @@ const Hero = async () => {
 
   return (
     <header className="h-screen w-full px-8 pb-16 pt-28 sm:pb-28 sm:pt-28">
-      {/* <BackgroundBeams /> */}
+      <BackgroundBeams />
       <div className="mx-auto flex h-full w-full max-w-screen-lg flex-col justify-center">
         <Reveral>
           <h1 className="font-heading mx-auto text-center font-poppins text-4xl font-black tracking-tight sm:text-5xl md:ml-0 md:text-left xl:text-7xl">
