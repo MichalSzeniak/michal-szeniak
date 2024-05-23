@@ -1,9 +1,7 @@
 "use client";
 
-import { Github, Linkedin, Mail } from "lucide-react";
+import { Mail } from "lucide-react";
 import Reveral from "./Reveral";
-import { motion } from "framer-motion";
-import { Button } from "./ui/button";
 
 const Contact = () => {
   return (
