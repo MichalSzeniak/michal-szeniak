@@ -1,5 +1,7 @@
 "use client";
-import Reveral from "@/components/Reveral";
+import { Button } from "@/components/ui/button";
+import { motion } from "framer-motion";
+import { Download } from "lucide-react";
 import { useEffect, useRef, useState } from "react";
 import { Document, Page, pdfjs } from "react-pdf";
 import "react-pdf/dist/Page/AnnotationLayer.css";
@@ -7,10 +9,6 @@ import "react-pdf/dist/Page/TextLayer.css";
 pdfjs.GlobalWorkerOptions.workerSrc = `//unpkg.com/pdfjs-dist@${pdfjs.version}/build/pdf.worker.min.js`;
 
 export default function Homepage() {
-  const iframeRef = useRef(null);
-  const [height, setHeight] = useState("");
-  const [width, setWidth] = useState("");
-
   const [scale, setScale] = useState(1.5);
 
   useEffect(() => {
@@ -36,21 +34,36 @@ export default function Homepage() {
   }, []);
 
   return (
-    <div
-      ref={iframeRef}
-      className="min-h-screen w-full px-8 pb-16 pt-28 sm:pb-28 sm:pt-28"
-    >
-      <div className="iframe-container mx-auto flex h-full w-full max-w-screen-lg flex-col items-center justify-center">
-        {/* <Reveral>
-          <iframe src="CV_MichalSzeniak.pdf" width={height} height={height} />
-
-        </Reveral> */}
-
-        <div className="pdf-container">
+    <div className="min-h-screen w-full px-8 pb-16 pt-28 sm:pb-28 sm:pt-28">
+      <Button
+        variant="secondary"
+        className="absolute right-5 gap-5 font-black"
+        asChild
+      >
+        <a href="CV_MichalSzeniak.pdf" download="CV_MichalSzeniak.pdf">
+          Download resume <Download />
+        </a>
+      </Button>
+      <div className="iframe-container mx-auto mt-14 flex h-full w-full max-w-screen-lg flex-col items-center justify-center ">
+        <motion.div
+          className="flex"
+          animate={{ opacity: 1, scale: 1, filter: "blur(0px)" }}
+          initial={{ opacity: 0, scale: 0.3, filter: "blur(10px)" }}
+          transition={{
+            delay: 0.6,
+            opacity: {
+              ease: "easeInOut",
+              duration: 0.5,
+            },
+            y: {
+              duration: 0.2,
+            },
+          }}
+        >
           <Document file="CV_MichalSzeniak.pdf">
-            <Page key={1} pageNumber={1} className="pdf-page" scale={scale} />
+            <Page pageNumber={1} scale={scale} />
           </Document>
-        </div>
+        </motion.div>
       </div>
     </div>
   );
