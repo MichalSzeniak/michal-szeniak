@@ -10,8 +10,8 @@ const Hero = async () => {
   if (!header) return notFound();
 
   return (
-    <header className="h-screen w-full px-8 pb-16 pt-28 sm:pb-28 sm:pt-28">
-      <BackgroundBeams />
+    <header className="dark:bg-dot-white/[0.2] bg-dot-black/[0.2] relative flex  h-[50rem] w-full items-center justify-center bg-white dark:bg-blue-950">
+      <div className="pointer-events-none absolute inset-0 flex items-center justify-center  [mask-image:radial-gradient(ellipse_at_center,transparent_30%,black)] dark:bg-gray-950"></div>
       <div className="mx-auto flex h-full w-full max-w-screen-lg flex-col justify-center">
         <Reveral>
           <h1 className="font-heading mx-auto text-center font-poppins text-4xl font-black tracking-tight sm:text-5xl md:ml-0 md:text-left xl:text-7xl">

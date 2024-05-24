@@ -41,7 +41,7 @@ export default function Homepage() {
         asChild
       >
         <a href="CV_MichalSzeniak.pdf" download="CV_MichalSzeniak.pdf">
-          Download resume <Download />
+          <span className="hidden sm:flex">Download resume</span> <Download />
         </a>
       </Button>
       <div className="iframe-container mx-auto mt-14 flex h-full w-full max-w-screen-lg flex-col items-center justify-center ">

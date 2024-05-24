@@ -27,13 +27,13 @@ const useAfterWork = [
 
 const AboutMe = () => {
   return (
-    <section className=" flex min-h-screen w-full items-center justify-center bg-gradient-to-l from-cyan-600 to-blue-600 px-8 py-10 sm:py-0">
+    <section className="relative flex min-h-screen w-full items-center justify-center bg-gradient-to-l  px-8 py-10 sm:py-0">
       <div className="flex max-w-screen-lg flex-col items-center justify-center gap-10 lg:flex-row">
         <div className="mx-auto flex w-full basis-full flex-col justify-center lg:basis-3/4">
           <Reveral>
             <h2 className="font-heading mx-auto text-center font-poppins text-4xl font-black tracking-tight sm:text-5xl md:ml-0 md:text-left xl:text-7xl">
               About
-              <span className="text-black">.</span>
+              <span className="text-primary">.</span>
             </h2>
           </Reveral>
 
