@@ -12,7 +12,6 @@ export const HoverEffect = ({
 }: {
   items: {
     title: string;
-    description: string;
     image: string | null;
     link: string;
   }[];
@@ -63,7 +62,7 @@ export const HoverEffect = ({
               )}
             </AspectRatio.Root>
             <CardTitle>{item.title}</CardTitle>
-            <CardDescription>{item.description}</CardDescription>
+            {/* <CardDescription>{item.description}</CardDescription> */}
           </Card>
         </Link>
       ))}

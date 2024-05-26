@@ -40,7 +40,6 @@ export default config({
       format: { contentField: "content" },
       schema: {
         title: fields.slug({ name: { label: "Title" } }),
-        description: fields.slug({ name: { label: "Description" } }),
         date: fields.date({
           label: "Date",
           description: "Date of the post",
@@ -71,7 +70,6 @@ export default config({
       format: { contentField: "content" },
       schema: {
         title: fields.slug({ name: { label: "Title" } }),
-        description: fields.slug({ name: { label: "Description" } }),
         date: fields.date({
           label: "Date",
           description: "Date of the post",
