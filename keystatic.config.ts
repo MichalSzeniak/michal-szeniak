@@ -40,10 +40,46 @@ export default config({
       format: { contentField: "content" },
       schema: {
         title: fields.slug({ name: { label: "Title" } }),
+        description: fields.slug({ name: { label: "Description" } }),
+        date: fields.date({
+          label: "Date",
+          description: "Date of the post",
+        }),
         image: fields.image({
           label: "postImage",
           directory: "public/images/postImages",
           publicPath: "/images/postImages",
+        }),
+        content: fields.document({
+          label: "Content",
+          formatting: true,
+          dividers: true,
+          links: true,
+          images: true,
+        }),
+        author: fields.relationship({
+          label: "Author",
+          collection: "authors",
+        }),
+      },
+    }),
+
+    Projects: collection({
+      label: "Projects",
+      slugField: "title",
+      path: "content/posts/*",
+      format: { contentField: "content" },
+      schema: {
+        title: fields.slug({ name: { label: "Title" } }),
+        description: fields.slug({ name: { label: "Description" } }),
+        date: fields.date({
+          label: "Date",
+          description: "Date of the post",
+        }),
+        image: fields.image({
+          label: "postImage",
+          directory: "public/images/projectImages",
+          publicPath: "/images/projectImages",
         }),
         content: fields.document({
           label: "Content",
