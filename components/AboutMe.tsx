@@ -77,7 +77,9 @@ const AboutMe = () => {
               </span>
               <div className="flex flex-wrap gap-3">
                 {useAtWork.map((item) => (
-                  <Badge variant="secondary">{item}</Badge>
+                  <Badge key={item} variant="secondary">
+                    {item}
+                  </Badge>
                 ))}
               </div>
             </div>
@@ -90,7 +92,9 @@ const AboutMe = () => {
               </span>
               <div className="flex flex-wrap gap-3">
                 {useAfterWork.map((item) => (
-                  <Badge variant="secondary">{item}</Badge>
+                  <Badge key={item} variant="secondary">
+                    {item}
+                  </Badge>
                 ))}
               </div>
             </div>

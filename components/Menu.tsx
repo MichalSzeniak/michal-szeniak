@@ -10,8 +10,7 @@ import {
   DropdownMenuSeparator,
   DropdownMenuTrigger,
 } from "./ui/dropdown-menu";
-import { Mail, MenuIcon, Navigation, X } from "lucide-react";
-import { ModeToggle } from "./ModeToggle";
+import { Mail, MenuIcon, X } from "lucide-react";
 
 const data = [
   {
@@ -50,7 +49,7 @@ const Menu = () => {
         </DropdownMenuTrigger>
         <DropdownMenuContent
           align="end"
-          className="w-80 bg-blue-500 bg-foreground  p-10 sm:w-96"
+          className="w-80 bg-blue-500 bg-foreground p-10 px-5 sm:w-96  sm:px-10"
           sideOffset={-40}
           onInteractOutside={() => toggleOpen((prev) => !prev)}
         >
@@ -64,6 +63,7 @@ const Menu = () => {
           </Button>
           {data.map((item) => (
             <motion.div
+              key={item.name}
               className="flex"
               animate={{ opacity: 1, scale: 1, filter: "blur(0px)" }}
               initial={{ opacity: 0, scale: 0.3, filter: "blur(10px)" }}

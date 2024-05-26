@@ -55,7 +55,7 @@ const HamburgerMenu = () => {
         <SheetHeader>
           <ul className="mb-0 flex flex-col gap-5 pt-10 ">
             {data.map((item) => (
-              <li>
+              <li key={item.name}>
                 <motion.div
                   initial={{ opacity: 0, y: 50 }}
                   // whileInView={{ opacity: 1, y: 0 }}

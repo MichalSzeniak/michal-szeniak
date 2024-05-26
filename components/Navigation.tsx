@@ -7,11 +7,11 @@ import Menu from "./Menu";
 
 const Navigation = () => {
   return (
-    <nav className="fixed top-0 z-[10] w-full bg-neutral-950/30 py-3 backdrop-blur-lg sm:py-7 md:text-sm lg:text-base print:hidden">
+    <nav className="fixed top-0 z-[50] w-full bg-neutral-950/30 py-3 backdrop-blur-lg sm:py-7 md:text-sm lg:text-base print:hidden">
       <div className="mx-auto flex max-w-screen-xl items-center justify-between gap-2 px-5 sm:gap-0">
-        <ul className="flex justify-center gap-5">
+        <ul className="flex items-center gap-5">
           <motion.p
-            className="mb-0 font-poppins text-2xl font-black tracking-tight xl:text-4xl"
+            className="mb-0 font-poppins  text-4xl font-black tracking-tight"
             initial={{ opacity: 0, y: -50 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{
@@ -71,62 +71,6 @@ const Navigation = () => {
         </ul>
 
         <Menu />
-        {/* <div className=" hidden gap-2 sm:flex sm:gap-10">
-          <ul className="mb-0 flex gap-4">
-            <li>
-              <Button
-                variant="ghost"
-                asChild
-                className={`link font-nunito text-base ${
-                  pathname === "/" ? "bg-secondary font-bold text-primary" : ""
-                }`}
-              >
-                <Link href={"/"}>Home</Link>
-              </Button>
-            </li>
-            <li>
-              <Button
-                variant="ghost"
-                asChild
-                className={`link font-nunito text-base ${
-                  pathname === "/posts"
-                    ? "bg-secondary font-bold text-primary"
-                    : ""
-                }`}
-              >
-                <Link href={"/posts"}>Posts</Link>
-              </Button>
-            </li>
-            <li>
-              <Button
-                variant="ghost"
-                asChild
-                className={`link font-nunito text-base ${
-                  pathname === "/links"
-                    ? "bg-secondary font-bold text-primary"
-                    : ""
-                }`}
-              >
-                <Link href={"/links"}>Links</Link>
-              </Button>
-            </li>
-            <li>
-              <Button
-                variant="ghost"
-                asChild
-                className={`link font-nunito text-base ${
-                  pathname === "/contact"
-                    ? "bg-secondary font-bold text-primary"
-                    : ""
-                }`}
-              >
-                <Link href={"/contact"}>Contact</Link>
-              </Button>
-            </li>
-          </ul>
-
-          <ModeToggle />
-        </div> */}
       </div>
     </nav>
   );

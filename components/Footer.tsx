@@ -1,15 +1,47 @@
 import { reader } from "app/reader";
 import { Github, Linkedin } from "lucide-react";
 import { Button } from "./ui/button";
+import Link from "next/link";
+import Reveral from "./Reveral";
+
+const data = [
+  {
+    href: "/",
+    name: "Home",
+  },
+  {
+    href: "/articles",
+    name: "My articles",
+  },
+  {
+    href: "/projects",
+    name: "My projects",
+  },
+  {
+    href: "/resume",
+    name: "My resume",
+  },
+];
 
 const Footer = async () => {
   const socialLinks = await reader.singletons.socialLinks.read();
 
   return (
-    <footer className="w-full mx-auto max-w-screen-xl bg-background">
+    <footer className="mx-auto w-full max-w-screen-xl bg-background">
       <hr />
-      <div className="flex items-center justify-between px-6 flex-col sm:flex-row">
-        <ul className="flex justify-center gap-5 my-6">
+      <div className="flex flex-col py-5">
+        {data.map((item) => (
+          <Button
+            variant="link"
+            asChild
+            className="link w-full justify-start font-poppins text-xl text-neutral-100"
+          >
+            <Link href={item.href}>{item.name}</Link>
+          </Button>
+        ))}
+      </div>
+      <div className="flex flex-col items-center justify-between px-6 py-10 sm:flex-row">
+        <ul className="my-6 flex justify-center gap-5">
           {socialLinks?.github && (
             <li>
               <Button variant="outline" size="icon">
