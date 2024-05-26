@@ -67,7 +67,7 @@ export default config({
     projects: collection({
       label: "Projects",
       slugField: "title",
-      path: "content/posts/*",
+      path: "content/projects/*",
       format: { contentField: "content" },
       schema: {
         title: fields.slug({ name: { label: "Title" } }),
