@@ -64,7 +64,7 @@ export default config({
       },
     }),
 
-    Projects: collection({
+    projects: collection({
       label: "Projects",
       slugField: "title",
       path: "content/posts/*",

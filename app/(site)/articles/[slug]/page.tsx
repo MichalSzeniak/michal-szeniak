@@ -1,7 +1,6 @@
 import { AspectRatio } from "@/components/ui/aspect-ratio";
 import { DocumentRenderer } from "@keystatic/core/renderer";
 import { reader } from "app/reader";
-import Image from "next/image";
 import { notFound } from "next/navigation";
 
 export default async function Post({ params }: { params: { slug: string } }) {

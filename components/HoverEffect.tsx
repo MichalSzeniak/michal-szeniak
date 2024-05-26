@@ -13,7 +13,7 @@ export const HoverEffect = ({
   items: {
     title: string;
     description: string;
-    image: string;
+    image: string | null;
     link: string;
   }[];
   className?: string;
@@ -54,11 +54,13 @@ export const HoverEffect = ({
           </AnimatePresence>
           <Card>
             <AspectRatio.Root ratio={16 / 9}>
-              <img
-                src={item.image}
-                alt="Picture of the post"
-                className="h-full w-full rounded-md object-cover"
-              />
+              {item.image && (
+                <img
+                  src={item.image}
+                  alt="Picture of the post"
+                  className="h-full w-full rounded-md object-cover"
+                />
+              )}
             </AspectRatio.Root>
             <CardTitle>{item.title}</CardTitle>
             <CardDescription>{item.description}</CardDescription>
