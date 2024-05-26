@@ -29,18 +29,18 @@ const Footer = async () => {
   return (
     <footer className="mx-auto w-full max-w-screen-xl bg-background">
       <hr />
-      <div className="flex flex-col py-5">
+      <div className="flex flex-col py-1">
         {data.map((item) => (
           <Button
             variant="link"
             asChild
-            className="link w-full justify-start font-poppins text-xl text-neutral-100"
+            className="link w-full justify-center font-poppins  text-neutral-100 sm:justify-start sm:text-xl"
           >
             <Link href={item.href}>{item.name}</Link>
           </Button>
         ))}
       </div>
-      <div className="flex flex-col items-center justify-between px-6 py-10 sm:flex-row">
+      <div className="flex flex-col items-center justify-between px-6 pb-10 sm:flex-row">
         <ul className="my-6 flex justify-center gap-5">
           {socialLinks?.github && (
             <li>
