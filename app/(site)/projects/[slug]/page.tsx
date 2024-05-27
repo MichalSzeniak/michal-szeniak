@@ -7,9 +7,9 @@ import { notFound } from "next/navigation";
 export default async function Post({ params }: { params: { slug: string } }) {
   const { slug } = params;
 
-  const projects = await reader.collections.projects.read(slug);
+  const project = await reader.collections.projects.read(slug);
 
-  if (!projects) return notFound();
+  if (!project) return notFound();
 
   return (
     <section className="relative flex min-h-screen w-full items-center justify-center bg-gradient-to-l px-8 py-10 sm:py-0">
@@ -18,9 +18,9 @@ export default async function Post({ params }: { params: { slug: string } }) {
           <div className="mx-auto flex h-full w-full max-w-screen-lg flex-col items-center justify-center gap-10">
             <div className="flex h-full w-full min-w-72 justify-center">
               <AspectRatio ratio={16 / 9}>
-                {projects.image && (
+                {project.image && (
                   <img
-                    src={projects.image}
+                    src={project.image}
                     alt="Picture of the projects"
                     className="h-full w-full rounded-md object-cover"
                   />
@@ -28,11 +28,11 @@ export default async function Post({ params }: { params: { slug: string } }) {
               </AspectRatio>
             </div>
             <h1 className="font-poppins text-4xl font-black tracking-tight sm:text-5xl xl:text-6xl">
-              {projects.title}
+              {project.title}
             </h1>
 
             <div className="text-lg">
-              <DocumentRenderer document={await projects.content()} />
+              <DocumentRenderer document={await project.content()} />
             </div>
           </div>
         </div>
