@@ -12,7 +12,7 @@ export default async function Homepage() {
   }));
 
   return (
-    <header className="relative flex  w-full  items-center justify-center">
+    <header className="relative flex w-full items-center justify-center">
       <DivAnimation>
         <div className="mx-auto flex h-full w-full max-w-screen-lg flex-col justify-center pt-20">
           <div className="mx-auto flex h-full w-full max-w-screen-lg flex-col items-center justify-center">

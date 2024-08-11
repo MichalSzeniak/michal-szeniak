@@ -41,7 +41,7 @@ const Footer = async () => {
         ))}
       </div>
       <div className="flex flex-col items-center justify-between px-6 pb-10 sm:flex-row">
-        <ul className="my-6 flex justify-center gap-5">
+        <ul className="my-6 flex justify-center gap-6">
           {socialLinks?.github && (
             <li>
               <Button variant="outline" size="icon">
@@ -50,6 +50,7 @@ const Footer = async () => {
                   rel="noopener"
                   target="_blank"
                   className="font-nunito"
+                  aria-label="Github"
                 >
                   <Github />
                 </a>
@@ -64,6 +65,7 @@ const Footer = async () => {
                   href={`https://www.linkedin.com/in/${socialLinks?.linkedin}`}
                   rel="noopener"
                   target="_blank"
+                  aria-label="Linkedin"
                 >
                   <Linkedin />
                 </a>
