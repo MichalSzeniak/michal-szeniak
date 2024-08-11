@@ -1,6 +1,5 @@
 import { Metadata } from "next";
 import Favicon from "/public/favicon.ico";
-import Og from "/public/og.png";
 
 export const metadata: Metadata = {
   title: "Michal Szeniak - portfolio",
@@ -13,7 +12,7 @@ export const metadata: Metadata = {
     type: "website",
     images: [
       {
-        url: Og.src,
+        url: "/og.png",
         width: 800,
         height: 600,
       },
